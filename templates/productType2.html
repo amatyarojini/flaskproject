@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+  </head>
+  <body>
+    {% for x in all_products %}
+      {% p = x['product_name'] %}
+        {% file_name = p +'.jpg' %}
+         <img src="../static/img/{{file_name}}" alt="Alternative Text">
+
+
+     {{x['product_name']}}
+     ${{x['price']}}
+    {% endfor %}
+  </body>
+ </html>

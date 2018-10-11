@@ -1,0 +1,29 @@
+<DOCTYPE! html>
+<html>
+ <head>
+ </head>
+ <body>
+  <h1>Welcome to main page!!!</h1>
+  {% with messages = get_flashed_messages() %}
+   {% if messages %}
+    {% for message in messages %}
+      {{message}}
+    {% endfor %}
+   {% endif %}
+  {% endwith %}
+  <h2>Women</h2>
+  <h3>Department</h3>
+  <h3><a href="/mainpage/productType">All type</a></h3>
+
+
+  <form method= 'POST' action="/mainpage/productType/dresses/myCart">
+      <input type="hidden" name="mycart" value="">
+      <button type="submit">My Cart</button>
+  </form>
+
+  <a href= "/signinpage">Log Out</a>
+
+
+
+ </body>
+</html>

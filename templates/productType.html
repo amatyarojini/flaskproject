@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+  </head>
+  <body>
+    {% for x in all_products %}
+     {{x['product_name']}}
+     ${{x['price']}}
+        <img src="../../static/img/{{x['product_name']}}.jpg" alt="Alternative Text">
+
+     <form method= 'POST' action="/mainpage/productType/dresses/addtocart">
+         <input type="hidden" name="pdname" value="{{x['product_name']}}">
+         <input type="hidden" name="price" value="{{x['price']}}">
+         <button type="submit">Addto cart</button>
+     </form>
+
+    {% endfor %}
+    <form method= 'POST' action="/mainpage/productType/dresses">
+        <input type="hidden" name="pdType" value="dresses">
+        <button type="submit">Dresses</button>
+    </form>
+    <form method= 'POST' action="/mainpage/productType/dresses">
+        <input type="hidden" name="pdType" value="jeans">
+        <button type="submit">Jeans</button>
+    </form>
+    <form method= 'POST' action="/mainpage/productType/dresses">
+        <input type="hidden" name="pdType" value="sportswear">
+        <button type="submit">Sportswear</button>
+    </form>
+
+    <form method= 'POST' action="/mainpage/productType/dresses">
+        <input type="hidden" name="pdType" value="beauty">
+        <button type="submit">Beauty</button>
+    </form>
+
+    <form method= 'POST' action="/mainpage/productType/dresses">
+        <input type="hidden" name="pdType" value="jewelry">
+        <button type="submit">Jewelry</button>
+    </form>
+
+
+    <form method= 'POST' action="/mainpage/productType/dresses/myCart">
+        <input type="hidden" name="mycart" value="">
+        <button type="submit">My Cart</button>
+    </form>
+    <a href="/mainpage">Back</a>
+
+  </body>
+ </html>

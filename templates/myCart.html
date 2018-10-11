@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+
+{% for x in myitems %}
+ {{x['product_name']}}
+ ${{x['price']}}<form method= 'POST' action="/mainpage/productType/dresses/addtocart/remove">
+      <input type="hidden" name="pdname" value="{{x['product_name']}}">
+      <button type="submit">Remove</button>
+  </form>
+{% endfor %}</br>
+<h2>Total: {{total}}</h2>
+<a href="/mainpage">Back</a>
+<form method= 'POST' action="/mainpage/productType/dresses/myCart/checkOut">
+     <input type="hidden" name="total" value="{{total}}">
+     <button type="submit">Proceed to Checkout</button>
+ </form>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Ninja Gold!</title>
+ </head>
+ <body>
+  <h4>Your Gold:</h4>
+  {% if 'earned' in session %}
+  <h4 id="totalgold">{{session['earned']}}</h4>
+  {% else %}
+  <h4 id="totalgold"> 0 </h4>
+  {% endif %}
+  <br>
+
+  <section>
+   <article id="farmmgold">
+    <h3>Farm</h3>
+    <p class='blocktext'>(earn 10-20 golds)</p>
+    <form method="post" action="/process_money">
+     <input type="submit" value="Find Gold!">
+     <input type="hidden" value='farm' name='building'>
+    </form>
+   </article>
+
+   <article id="cavegold">
+    <h3>Cave</h3>
+    <p class='blocktext'>(earn 5-10 golds)</p>
+    <form method="post" action="/process_money">
+     <input type="submit" value="Find Gold!">
+     <input type="hidden" value='cave' name='building'>
+    </form>
+   </arcticle>
+
+   <article id="housegold">
+    <h3>House</h3>
+    <p class='blocktext'>(earn 2-5 golds)</p>
+    <form method="post" action="/process_money">
+     <input type="submit" value="Find Gold!">
+     <input type="hidden" value='house' name='building'>
+    </form>
+   </article>
+
+   <article id="casino">
+    <h3>Casino</h3>
+    <p class='blocktext'>(earn/takes 0-50 golds )</p>
+    <form method="post" action="/process_money">
+     <input type="submit" value="Find Gold!">
+     <input type="hidden" value='casino' name='building'>
+    </form>
+   </article>
+  </section>
+  <br>
+
+  <p id='activitylabel'>Activities:</p>
+  <div id="log">
+  {% for x in session['log'] %}
+   <p> {{ x }} </p>
+  {% endfor %}
+  </div>
+
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<!Doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Sign In Page</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename= 'css/signin.css')}}">
+ </head>
+ <body>
+  <div id= "container">
+   <div id = "leftsection">
+   </div>
+   <div id = "middlesection">
+    <div id= "topsection">
+     <h1>Sign In!</h1>
+     <h3>Please fill all required field.</h3>
+     {% with messages = get_flashed_messages() %}
+      {% if messages %}
+       {% for message in messages %}
+        {{message}}
+       {% endfor %}
+      {% endif %}
+     {% endwith %}
+    </div>
+   <div id= "bottomsecton">
+    <form action='/login' method='POST'>
+     <div class="attribute"><p><b>Email:</p></b><input type= "text" name="email" placeholder = "Enter Email"></div>
+     <div class="attribute"><p><b>Password:</p></b><input type="password" name="password" placeholder = "Enter Password"></div>
+     <div class="clickbutton"><input type= "submit" value = "Sign In"></div>
+    </form>
+    <h3><a href="/">Back</a></h3>
+
+   </div>
+   </div>
+   <div id="rightsection">
+   </div>
+  </div>
+ </body>
+</html>
